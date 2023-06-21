@@ -2,13 +2,13 @@ import axios from "axios";
 
 const apiUrl = "";
 
-class Taskservice {
+class Movieservice {
   getTasks() {
-    console.log("get all task");
+    return axios.get(apiUrl);
   }
 
   addTask(task) {
-    console.log("Add a single task");
+    return axios.post(apiUrl, task);
   }
 
   getTaskByID(taskID) {
@@ -24,4 +24,4 @@ class Taskservice {
   }
 }
 
-export default new Taskservice();
+export default new Movieervice();

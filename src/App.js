@@ -1,18 +1,31 @@
 import React from "react";
 import "./App.css";
-import Header from "./Components/Header/Header";
 
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./Components/Home/Home";
+import Header from "./Components/Header/Header";
+import Footer from "./Components/Footer/Footer";
+import ListTask from "./Components/LIstTask/ListTaks";
+import AddTask from "./Components/AddTask/AddTask";
+import ViewTask from "./Components/ViewTask/ViewTask";
+import EditTask from "./Components/EditTask/EditTask";
 function App() {
   return (
     <div className="container-main">
-      <Header />
-      <br />
-      <div class="container">
-        <div class="row">
-          <div class="col-8">Main</div>
-          <div class="col-4">Log</div>
+      <Router>
+        <Header />
+        <br />
+        <div className="container">
+          <Routes>
+            <Route path="/" exact Component={Home}></Route>
+            <Route path="tasks" Component={ListTask}></Route>
+            <Route path="add-task/:id" Component={AddTask}></Route>
+            <Route path="edit-task/:id" Component={EditTask}></Route>
+            <Route path="view-task/:id" Component={ViewTask}></Route>
+          </Routes>
         </div>
-      </div>
+        <Footer />
+      </Router>
     </div>
   );
 }
