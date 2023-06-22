@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+import ApiService from "./apiServices/ApiService";
 import Home from "./Components/Home/Home";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
@@ -19,11 +21,12 @@ function App() {
           <Routes>
             <Route path="/" exact Component={Home}></Route>
             <Route path="tasks" Component={ListTask}></Route>
-            <Route path="add-task/:id" Component={AddTask}></Route>
-            <Route path="edit-task/:id" Component={EditTask}></Route>
-            <Route path="view-task/:id" Component={ViewTask}></Route>
+            <Route path="add-task" Component={AddTask}></Route>
+            <Route path="/edit-task/:id" Component={EditTask}></Route>
+            <Route path="view-task" Component={ViewTask}></Route>
           </Routes>
         </div>
+        <br />
         <Footer />
       </Router>
     </div>

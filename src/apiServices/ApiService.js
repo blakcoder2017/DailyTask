@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const apiUrl = "";
+const apiUrl = "http://localhost/myapi/api/task/";
 
-class Movieservice {
+class Apiservice {
   getTasks() {
-    return axios.get(apiUrl);
+    return axios.get(apiUrl + "read.php");
   }
 
   addTask(task) {
@@ -24,4 +24,4 @@ class Movieservice {
   }
 }
 
-export default new Movieervice();
+export default new Apiservice();
